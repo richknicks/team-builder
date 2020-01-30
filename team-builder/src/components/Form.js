@@ -13,7 +13,9 @@ line-height: 2rem;
 const ButtonFace = styled.button`
 margin: 20px auto;
 width: 20%;
+background-color: lightblue;
 `;
+
 const Form = (props) => {
     console.log('test', props)
     
@@ -42,7 +44,7 @@ return(
         <input name="email" onChange={handleChanges}/>
         <label htmlFor="title">Member Role:</label>
         <select name="role" onChange={handleChanges}>
-            <option >Please Select</option>
+            <option>Please Select</option>
             <option >Full Stack Developer</option>
             <option >IOS</option>
             <option >Android</option>
