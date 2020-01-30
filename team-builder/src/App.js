@@ -6,7 +6,7 @@ import FormCard from './components/FormCard';
 
 function App() {
   const [team, setTeam]=useState([{
-    name:"Rich",
+    name:"",
     email:"",
     role:""
   }]);
@@ -20,8 +20,10 @@ function App() {
   };
   return (
     <div className="App">
-      <FormCard addNewMember={addNewMember} />
-      <Form team={team}/>
+      <Form addNewMember={addNewMember} />
+      <FormCard team={team}/>
+      
+      
      
     </div>
   );
