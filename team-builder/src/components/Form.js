@@ -14,7 +14,7 @@ const ButtonFace = styled.button`
 margin: 20px auto;
 width: 20%;
 `;
-const FormCard = (props) => {
+const Form = (props) => {
     console.log('test', props)
     
     const [team, setTeam] = useState({
@@ -52,4 +52,4 @@ return(
         </FormDiv>
 )};
 
-export default FormCard
+export default Form
