@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const FormCard = props => {
+const FormDiv = styled.form`
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 35%;
+`;
+const FormCard = (props) => {
+    console.log('test', props)
+    
     const [team, setTeam] = useState({
         name: "",
         email: "",
         role:""
-      })};
+      });
+     
       const handleChanges = event => {
-        setTeam({ ...team, [event.target.team]: event.target.value });
+        setTeam({ ...team, [event.target.name]: event.target.value });
         console.log(team);
       };
       const submitForm = event => {
@@ -17,14 +27,22 @@ const FormCard = props => {
       };
 
 return(
-    <form onSubmit={submitForm}>
+
+    <FormDiv onSubmit={submitForm}>
         <label htmlFor="title">Team Member:</label>
-        <input type="text" onChange={handleChanges}/>
+        <input name="name" onChange={handleChanges}/>
         <label htmlFor="title">Member Email:</label>
-        <input type="text" onChange={handleChanges}/>
+        <input name="email" onChange={handleChanges}/>
         <label htmlFor="title">Member Role:</label>
-        <input type="text" onChange={handleChanges}/>
-        </form>
-)
+        <select name="role" onChange={handleChanges}>
+            <option >Please Select</option>
+            <option >Full Stack Developer</option>
+            <option >IOS</option>
+            <option >Android</option>
+            <option >Data Scientist</option>
+        </select>
+        <button type="submit">Add Team Member</button>
+        </FormDiv>
+)};
 
 export default FormCard
